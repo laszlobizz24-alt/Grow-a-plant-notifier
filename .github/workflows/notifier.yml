@@ -1,6 +1,6 @@
 name: Grow a Plant Egg Notifier
 
-on:
+'on':
   workflow_dispatch:
   push:
     branches:
