@@ -1,0 +1,33 @@
+{
+  "game": {
+    "name": "Grow a Plant",
+    "place_id": 74641726785011,
+    "universe_id": 10768292556
+  },
+  "target_eggs": [
+    {
+      "name": "Royal Egg",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Sun Wing Egg",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Inferno Egg",
+      "rarity": "Mythic"
+    },
+    {
+      "name": "Solar Egg",
+      "rarity": "Mythic"
+    },
+    {
+      "name": "Sealed Eye Egg",
+      "rarity": "Secret"
+    },
+    {
+      "name": "Abyss Egg",
+      "rarity": "Secret"
+    }
+  ]
+}
