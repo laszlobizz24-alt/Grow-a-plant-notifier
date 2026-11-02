@@ -24,12 +24,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-              - name: Test Discord webhook
+      - name: Run notifier
+        run: python main.py
+
+      - name: Test Discord webhook
         if: github.event_name == 'workflow_dispatch'
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          python -c "import os,requests; u=os.getenv('DISCORD_WEBHOOK_URL'); assert u, 'DISCORD_WEBHOOK_URL secret is missing'; r=requests.post(u,json={'content':'🌱 Grow a Plant Notifier: Discord connection test successful!'}); r.raise_for_status(); print('Discord test sent successfully')"
-
-      - name: Run notifier
-        run: python main.py
+          python -c "import os,requests; u=os.getenv('DISCORD_WEBHOOK_URL'); assert u, 'Missing DISCORD_WEBHOOK_URL secret'; r=requests.post(u,json={'content':'🌱 Grow a Plant Notifier: Discord connection successful!'},timeout=20); r.raise_for_status(); print('Discord message sent successfully!')"
